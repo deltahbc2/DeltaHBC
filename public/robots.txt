@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /*.json$
+Disallow: /private/
+
+# Delay for aggressive crawlers
+User-agent: MJ12bot
+User-agent: SemrushBot
+Crawl-delay: 10
+
+# Allow major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Sitemap
+Sitemap: https://deltahbc.com/sitemap.xml

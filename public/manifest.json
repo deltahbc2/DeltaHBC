@@ -1,0 +1,42 @@
+{
+  "name": "DeltaHBC",
+  "short_name": "DeltaHBC",
+  "description": "DeltaHBC desarrolla soluciones tecnológicas con enfoque en impacto social, accesibilidad e innovación.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#03060A",
+  "background_color": "#ffffff",
+  "categories": ["technology", "business"],
+  "screenshots": [
+    {
+      "src": "/Images/Hero.webp",
+      "sizes": "1200x630",
+      "type": "image/webp",
+      "form_factor": "wide"
+    }
+  ],
+  "icons": [
+    {
+      "src": "/Images/Hero.webp",
+      "sizes": "any",
+      "type": "image/webp",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Contacto",
+      "short_name": "Contacto",
+      "description": "Contacta con DeltaHBC",
+      "url": "/#contact",
+      "icons": [
+        {
+          "src": "/Images/Hero.webp",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}
