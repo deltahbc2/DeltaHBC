@@ -1,38 +1,80 @@
 ---
-
 import '../styles/global.css';
 
+interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  locale?: 'es-MX' | 'en-US';
+  robots?: string;
+  canonical?: string;
+  siteName?: string;
+}
+
 const {
-	title = 'DeltaHBC',
-	description = 'Startup tecnológica enfocada en resolver problemas de alto impacto social con soluciones innovadoras y centradas en las personas.',
+  title = 'DeltaHBC',
+  description = 'DeltaHBC desarrolla soluciones tecnológicas con enfoque en impacto social, accesibilidad e innovación.',
+  keywords = 'startup tecnológica, impacto social, desarrollo web, innovación, accesibilidad, DeltaHBC',
+  locale = 'es-MX',
+  robots = 'index, follow',
+  canonical,
+  siteName = 'DeltaHBC',
 } = Astro.props;
 
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: siteName,
+  description,
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: siteName,
+  description,
+  inLanguage: locale,
+};
 ---
 
 <!doctype html>
-<html lang="es-MX">
+<html lang={locale}>
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="generator" content={Astro.generator} />
 	<meta name="description" content={description} />
-	<meta name="robots" content="index, follow" />
+	<meta name="keywords" content={keywords} />
+	<meta name="robots" content={robots} />
 	<meta name="theme-color" content="#03060A" />
 	<meta name="color-scheme" content="dark" />
-	<meta property="og:site_name" content="DeltaHBC" />
-	<meta property="og:locale" content="es_MX" />
 	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content={siteName} />
+	<meta property="og:locale" content="es_MX" />
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={description} />
-	<meta name="twitter:card" content="summary" />
+
+	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={description} />
+	<meta name="twitter:image" content="https://deltahbc.com/Images/Hero.webp" />
+	<meta name="twitter:image:alt" content="DeltaHBC | Soluciones Tecnológicas de Impacto Social" />
+
 	<title>{title}</title>
+	{canonical && <link rel="canonical" href={canonical} />}
+
+	<script type="application/ld+json">
+		{JSON.stringify(organizationSchema)}
+	</script>
+	<script type="application/ld+json">
+		{JSON.stringify(websiteSchema)}
+	</script>
+
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<script src="https://kit.fontawesome.com/17383348a8.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="antialiased">
 	<main id="content" tabindex="-1">
 		<slot />
 	</main>
