@@ -1,0 +1,33 @@
+---
+import { ArrowRight, Send } from "@lucide/astro";
+---
+
+<section id="hero" class="relative min-h-screen max-w-300 mx-auto flex items-center justify-center overflow-hidden px-8">
+    <div class="absolute inset-0 z-0">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-400/10 rounded-full blur-[120px]"></div>
+    </div>
+    <div class="grid md:grid-cols-2">
+        <div class="mt-12 md:mt-0 relative z-10 max-w-4xl mx-auto">
+            <h1 class="text-center md:text-start text-4xl md:text-6xl font-bold mb-4 text-neutral-100/90">Transformando realidades y generando impacto</h1>
+            <p class="text-center md:text-start text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-6 leading-relaxed">
+                Startup tecnológica enfocada en resolver problemas de alto impacto social a través de soluciones innovadoras y disruptivas.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center gap-4">
+                <a href="#projects" class="w-full sm:w-auto px-8 py-4 bg-white text-black font-semibold rounded-lg hover:bg-gray-100 transition-colors flex items-center justify-center gap-2" aria-label="Ir a la sección de proyectos destacados">
+                    Ver Proyectos
+                    <ArrowRight class="size-5" aria-hidden="true" />
+                </a>
+                <a href="#contact" class="w-full sm:w-auto px-8 py-4 glass-card text-white font-semibold rounded-lg hover:bg-blue-800/5 transition-colors flex items-center justify-center gap-2 border border-blue-800/20" aria-label="Ir al formulario de contacto">
+                    Contáctanos
+                    <Send class="size-5" aria-hidden="true" />
+                </a>
+            </div>
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto my-12 md:my-0 flex items-center justify-center">
+            <img src="/Images/Hero.webp" alt="Equipo de DeltaHBC mostrando una propuesta tecnológica" class="w-full h-auto rounded-lg shadow-lg" loading="eager" fetchpriority="high" />
+        </div>
+    </div>
+</section>

@@ -1,0 +1,115 @@
+---
+
+const icons = {
+    "Next.js": "fa-brands fa-react text-white",
+    "React": "fa-brands fa-react text-cyan-400",
+    "Typescript": "fa-brands fa-square-js text-blue-400",
+    "Convex": "fa-solid fa-database text-[#f3b01c]",
+    "HTML": "fa-brands fa-html5 text-orange-500",
+    "CSS": "fa-brands fa-css3-alt text-blue-500",
+    "Leaflet": "fa-solid fa-leaf text-green-500",
+    "Java": "fa-brands fa-java text-white",
+    "MySQL": "fa-solid fa-database text-[#00628c]",
+    "Clerk": "fa-solid fa-user-lock text-[#7e7abd]",
+    "Arduino": "fa-solid fa-robot text-[#00979d]",
+    "Telegram": "fa-brands fa-telegram text-[#0088cc]",
+};
+
+type Technology = keyof typeof icons;
+
+type Project = {
+    title: string;
+    slug: string;
+    description: string;
+    technologies: Technology[];
+    link: string;
+    image?: string;
+    span: string;
+};
+
+const projects: Project[] = [
+    {
+        title: "Regionerate",
+        slug: "Mapa interactivo",
+        description: "Plataforma con mapa interactivo para explorar especies nativas de Nuevo León y apoyar decisiones de reforestación con datos.",
+        technologies: ["React", "Typescript", "Convex", "Leaflet"],
+        link: "https://github.com/deltahbc2/regionerate",
+        image: "/Images/Projects/Regionerate.webp",
+        span: "md:col-span-5"
+    },
+    {
+        title: "EasyTalk",
+        slug: "Dispositivo",
+        description: "Dispositivo de comunicación para facilitar el hablar a personas con dificultades de comunicación.",
+        technologies: ["Arduino", "Telegram", "HTML", "CSS"],
+        link: "https://deltahbc2.github.io/EasyTalk/",
+        image: "/Images/Projects/Easytalk.webp",
+        span: "md:col-span-3"
+    },
+    {
+        title: "IEEPCNL",
+        slug: "MVP",
+        description: "DEMO. Plataforma de participación ciudadana para colonias, comites y mesas directivas de Nuevo León.",
+        technologies: ["Next.js", "MySQL"],
+        link: "mi-colonia-participa.vercel.app",
+        image: "/Images/Projects/IEEPCNL.webp",
+        span: "md:col-span-3"
+    },
+    {
+        title: "Skillpath",
+        slug: "IA + onboarding",
+        description: "Plataforma de aprendizaje y onboarding con landing pública, panel admin, roadmaps generados con IA, manejo de habilidades, quizzes y carga de PDFs.",
+        technologies: ["Next.js", "Typescript", "Convex", "Clerk"],
+        link: "https://github.com/deltahbc2/Skillpath",
+        image: "/Images/Projects/Skillpath.webp",
+        span: "md:col-span-5"
+    }
+];
+---
+
+<section id="projects" class="py-24 px-6">
+    <div class="max-w-300 mx-auto px-2 md:px-12">
+        <h2 class="text-[#bec6e0] text-5xl font-bold text-center mb-6">Proyectos Destacados</h2>
+        <p class="text-gray-300 text-xl text-center mb-16 max-w-200 mx-auto">
+            Descubre los proyectos que hemos desarrollado para abordar desafíos en salud, educación y sostenibilidad.
+        </p>
+
+        <div class="grid md:grid-cols-8 gap-6">
+            {projects.map((project: Project) => (
+                <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    class={`rounded-2xl border border-neutral-700/50 hover:border-blue-800/40 transition-colors overflow-hidden group ${project.span}`}
+                >
+                    <div class="h-64 bg-linear-to-br from-amber-500/25 via-slate-900 to-slate-950 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.15),transparent_35%),radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.08),transparent_30%)]"></div>
+                            
+                        <div class="absolute inset-0 flex items-end justify-between p-6">
+                            <div>
+                                <div class="mt-4 text-2xl font-black tracking-tight text-white/90">
+                                    {/* {project.slug} */}
+                                </div>
+                            </div>
+                        </div>
+
+                        <img src={project.image} alt={project.title} class="w-full h-full object-cover">
+                    </div>
+
+                    <div class="p-6 md:p-8">
+                        <h3 class="font-semibold text-2xl mb-2 group-hover:text-[#bec6e0]">{project.title}</h3>
+                        <p class="text-md text-gray-400">{project.description}</p>
+
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            {project.technologies.map((tech: Technology) => (
+                                <span class="px-3 py-1 bg-neutral-800 border border-gray-800 rounded-md text-sm font-mono text-gray-400 flex items-center gap-2">
+                                    <i class={icons[tech]}></i>{tech}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                </a>
+            ))}
+        </div>
+    </div>
+</section>
