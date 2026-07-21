@@ -1,46 +1,36 @@
-# Astro Starter Kit: Basics
+# DeltaHBC
 
-```sh
-npm create astro@latest -- --template basics
-```
+Sitio web de presentación de **DeltaHBC**, una startup tecnológica enfocada en resolver problemas de alto impacto social con soluciones digitales.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Descripción
 
-## 🚀 Project Structure
+Este proyecto es una landing page construida con Astro para comunicar de forma clara:
 
-Inside of your Astro project, you'll see the following folders and files:
+- Quiénes somos
+- Qué hacemos
+- Proyectos destacados
+- Equipo
+- Formas de contacto
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+El sitio está pensado para ser rápido, accesible y fácil de indexar por buscadores.
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Tecnologías
 
-## 🧞 Commands
+- [Astro](https://docs.astro.build/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Lucide Icons](https://lucide.dev/)
+- Font Awesome
 
-All commands are run from the root of the project, from a terminal:
+## Características
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+- SEO base con metadatos, Open Graph y Twitter Cards
+- Estructura semántica para mejor accesibilidad
+- Navegación por secciones
+- Formulario de contacto
+- Diseño responsive
 
-## 👀 Want to learn more?
+## Notas
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Las imágenes del sitio se encuentran en `public/Images`.
+- El proyecto está configurado como sitio estático.
+- El contenido puede adaptarse fácilmente si se requiere una versión corporativa o multilingüe.
