@@ -1,0 +1,19 @@
+# ============================================
+# DeltaHBC - Canonical URL
+# Fuerza HTTPS y elimina www
+# ============================================
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Redirigir cualquier variante a https://deltahbc.com
+    RewriteCond %{HTTPS} !=on [OR]
+    RewriteCond %{HTTP_HOST} ^www\.deltahbc\.com$ [NC]
+    RewriteRule ^(.*)$ https://deltahbc.com/$1 [R=301,L]
+</IfModule>
+
+# ============================================
+# Página 404 personalizada
+# ============================================
+
+# ErrorDocument 404 /404.html
